@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Factura de venta</title>
+		<style>
+			table, th, td {
+    		border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Factura</h1>
+		
+		<table width="100%" cellpadding="3">
+			<tr>
+				<th bgcolor="#b3b3b3">Producto</th>
+				<th>Colegio</th>
+				<th>Cantidad</th>
+				<th>Talla</th>
+				<th>Subtotal</th>
+			</tr>
+			<table>
+				<tr>
+					<td width="20%">
+						<table cellpadding="3">
+
+								{% for produ in producto %}
+									<tr>
+										<td>{{produ}}</td>
+									</tr>
+								{% endfor %}
+						</table>
+					</td>
+					<td width="60%">
+						<table cellpadding="3">
+								{% for pedido in datos_factura %}
+									<tr>
+										<td>{{pedido.Colegio}}</td>
+										<td>{{pedido.cantidad}}</td>
+										<td>{{pedido.talla}}</td>
+									</tr>
+								{% endfor %}
+						</table>	
+					</td>
+					<td width="20%">
+						<table cellpadding="3">
+
+								{% for sub in subTotal %}
+									<tr>
+										<td>{{sub}}</td>
+									</tr>
+								{% endfor %}
+						</table>
+					</td>
+				</tr>
+			</table>
+			<table cellpadding="3">
+				<tr>
+					<td width="60%"></td>
+					<th width="20%" bgcolor="#cccccc">Total</th>
+					<td width="20%">{{total}}</td>
+				</tr>
+			</table>
+		</table>
+	</body>
+</html>
+
+
