@@ -1,7 +1,15 @@
 from django.contrib import admin
 from PuntoDelUniforme.Apps.Facturación.models import *
+from django.shortcuts import render
 
 # Register your models here.
+
+def generarFactura(modeladmin, request, queryset):
+
+	return redirect('PDFPrueba')
+generarFactura.short_description = 'Generar reporte en pdf'
+	
+
 
 class FacturaAdmin(admin.ModelAdmin):
 	#exclude = ('') exlulle un campo para que no se muestre
@@ -10,6 +18,9 @@ class FacturaAdmin(admin.ModelAdmin):
 		'_getTotal',
 		'id',
 		)
+
+	actions = [generarFactura, ]
+
 
 
 
