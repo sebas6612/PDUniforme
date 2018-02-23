@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from PuntoDelUniforme.Apps.Facturación.views import PDFPrueba
-from IPython.external.path import path as Path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
