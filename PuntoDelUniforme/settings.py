@@ -26,7 +26,7 @@ SECRET_KEY = 'p4)x6o)6+88zb@y*iaxlixkrs_$j(jq$x%az9w$_5wnbjt*1s@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [pduniforme.pythonanywhere.com]
+ALLOWED_HOSTS = ['pduniforme.pythonanywhere.com']
 
 
 # Application definition
