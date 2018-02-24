@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'PuntoDelUniforme.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'PuntoDelUniforme.db',
+        'NAME': '/home/pduniforme/PDUniforme/PuntoDelUniforme.db',
     }
 }
 
