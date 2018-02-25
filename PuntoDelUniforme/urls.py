@@ -21,3 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('admin/reporte_pdf/<int:id>/', PDFPrueba.as_view(), name='reporte_pdf') #link para Generar pdf
 ]
+
+
+admin.site.site_header = "Sistema interno Punto del Uniforme"
+admin.site.index_title = "Sistema Punto del Uniforme"
