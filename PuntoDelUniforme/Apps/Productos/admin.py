@@ -79,6 +79,39 @@ class SudaderaAdmin(admin.ModelAdmin):
 		'Colegio__Nombre',
 		)
 
+class PantalonAdmin(admin.ModelAdmin):
+	list_display = (
+		'Colegio',
+		'PrecioS',
+		'PrecioM',
+		'PrecioL',
+		)
+	search_fields = (
+		'Colegio__Nombre',
+		)
+
+class CamisetaFisicaAdmin(admin.ModelAdmin):
+	list_display = (
+		'Colegio',
+		'PrecioS',
+		'PrecioM',
+		'PrecioL',
+		)
+	search_fields = (
+		'Colegio__Nombre',
+		)
+
+class CamisetaGalaAdmin(admin.ModelAdmin):
+	list_display = (
+		'Colegio',
+		'PrecioS',
+		'PrecioM',
+		'PrecioL',
+		)
+	search_fields = (
+		'Colegio__Nombre',
+		)
+
 
 admin.site.register(Blusa, BlusaAdmin)
 admin.site.register(Pantaloneta, PantalonetaAdmin)
@@ -87,3 +120,6 @@ admin.site.register(BlueJean, BluJeanAdmin)
 admin.site.register(Chaqueta, ChaquetaAdmin)
 admin.site.register(Guayabera, GuayaberaAdmin)
 admin.site.register(Sudadera, SudaderaAdmin)
+admin.site.register(Pantalon, PantalonAdmin)
+admin.site.register(CamisetaFisica, CamisetaFisicaAdmin)
+admin.site.register(CamisetaGala, CamisetaGalaAdmin)

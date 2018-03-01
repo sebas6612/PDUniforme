@@ -12,7 +12,7 @@ generarFactura.short_description = 'Generar reporte en pdf'
 
 
 class FacturaAdmin(admin.ModelAdmin):
-	#exclude = ('') exlulle un campo para que no se muestre
+	#exclude = ('') exclulle un campo para que no se muestre
 	list_display = (
 		'fecha_pedido',
 		'_getTotal',

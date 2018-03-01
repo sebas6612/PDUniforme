@@ -95,4 +95,41 @@ class Sudadera(models.Model):
     def __str__(self):
         return self.NombreCompleto()
     
+class Pantalon(models.Model):
+    Colegio = models.ForeignKey(Colegio, null=False, blank=False, on_delete=models.CASCADE)
+    PrecioS = models.PositiveIntegerField(validators=[validarPrecio])
+    PrecioM = models.PositiveIntegerField(validators=[validarPrecio])
+    PrecioL = models.PositiveIntegerField(validators=[validarPrecio])
     
+    def NombreCompleto(self):
+        cadena = "Colegio: {0} - Precios S:{1}; M:{2}; L:{3}"
+        return cadena.format(self.Colegio, self.PrecioS, self.PrecioM, self.PrecioL)
+    
+    def __str__(self):
+        return self.NombreCompleto()
+
+class CamisetaFisica(models.Model):
+    Colegio = models.ForeignKey(Colegio, null=False, blank=False, on_delete=models.CASCADE)
+    PrecioS = models.PositiveIntegerField(validators=[validarPrecio])
+    PrecioM = models.PositiveIntegerField(validators=[validarPrecio])
+    PrecioL = models.PositiveIntegerField(validators=[validarPrecio])
+    
+    def NombreCompleto(self):
+        cadena = "Colegio: {0} - Precios S:{1}; M:{2}; L:{3}"
+        return cadena.format(self.Colegio, self.PrecioS, self.PrecioM, self.PrecioL)
+    
+    def __str__(self):
+        return self.NombreCompleto()
+
+class CamisetaGala(models.Model):
+    Colegio = models.ForeignKey(Colegio, null=False, blank=False, on_delete=models.CASCADE)
+    PrecioS = models.PositiveIntegerField(validators=[validarPrecio])
+    PrecioM = models.PositiveIntegerField(validators=[validarPrecio])
+    PrecioL = models.PositiveIntegerField(validators=[validarPrecio])
+    
+    def NombreCompleto(self):
+        cadena = "Colegio: {0} - Precios S:{1}; M:{2}; L:{3}"
+        return cadena.format(self.Colegio, self.PrecioS, self.PrecioM, self.PrecioL)
+    
+    def __str__(self):
+        return self.NombreCompleto()

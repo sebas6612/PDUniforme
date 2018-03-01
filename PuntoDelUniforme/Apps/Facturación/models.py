@@ -13,7 +13,10 @@ opciones_producto = [
     ('p03','Delantales'), 
     ('p04','Guayaberas'),
     ('p05','Pantalonetas'),
-    ('p06','Sudaderas')
+    ('p06','Sudaderas'),
+    ('p07','Pantalones'),
+    ('p08','Camisetas Física'),
+    ('p09','Camisetas Gala'),
 ]
 #opciones_producto.append(('p05','Pantalonetas'))
 #opciones_producto.append(('p06','Sudaderas'))
@@ -117,7 +120,41 @@ class Pedido(models.Model):
             elif self.talla < 16:
                 return consultaProducto.PrecioM * self.cantidad
             else:
-                return consultaProducto.PrecioL * self.cantidad        
+                return consultaProducto.PrecioL * self.cantidad
+
+        elif self.producto == 'p07':
+
+            consultaProducto = Pantalon.objects.get(Colegio_id = self.Colegio_id)
+
+            if self.talla < 10:
+                return consultaProducto.PrecioS * self.cantidad
+            elif self.talla < 16:
+                return consultaProducto.PrecioM * self.cantidad
+            else:
+                return consultaProducto.PrecioL * self.cantidad
+                
+        elif self.producto == 'p08':
+
+            consultaProducto = CamisetaFisica.objects.get(Colegio_id = self.Colegio_id)
+
+            if self.talla < 10:
+                return consultaProducto.PrecioS * self.cantidad
+            elif self.talla < 16:
+                return consultaProducto.PrecioM * self.cantidad
+            else:
+                return consultaProducto.PrecioL * self.cantidad
+
+        elif self.producto == 'p09':
+
+            consultaProducto = CamisetaGala.objects.get(Colegio_id = self.Colegio_id)
+
+            if self.talla < 10:
+                return consultaProducto.PrecioS * self.cantidad
+            elif self.talla < 16:
+                return consultaProducto.PrecioM * self.cantidad
+            else:
+                return consultaProducto.PrecioL * self.cantidad     
+
 
     
     subTotal = property(_getSubTotal)

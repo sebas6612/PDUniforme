@@ -60,14 +60,19 @@ class PDFPrueba(View):
 			if produc.producto == 'p02':
 				listaProductos.append('Chaqueta')
 			if produc.producto == 'p03':
-				listaProductos.append('delantal')
+				listaProductos.append('Delantal')
 			if produc.producto == 'p04':
 				listaProductos.append('Guayabera')
 			if produc.producto == 'p05':
 				listaProductos.append('Pantaloneta')
 			if produc.producto == 'p06':
 				listaProductos.append('Sudadera')
-
+			if produc.producto == 'p07':
+				listaProductos.append('Pantalon')
+			if produc.producto == 'p08':
+				listaProductos.append('CamisetaFisica')
+			if produc.producto == 'p09':
+				listaProductos.append('CamisetaGala')
 
 
 		pdf = render_pdf("principal/reporte_pdf.html",
@@ -78,6 +83,7 @@ class PDFPrueba(View):
 			"total": total,
 			}
 		)
+
 		
 		return HttpResponse(pdf, content_type="application/pdf")
 		
